@@ -1,8 +1,8 @@
 from setuptools import setup, Extension
 
 module = Extension('my_readline_module',
-                    sources = ['my_readline_module.c'],
-                    include_dirs = ['/path/to/headers'],  
+                    sources = ['./readline_py/readlinemodule.c'],
+                    include_dirs = ['./readline_py/'],  
                     libraries = [], 
                     library_dirs = [])
 
