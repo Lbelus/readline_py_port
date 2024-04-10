@@ -19,7 +19,8 @@ RUN apt-get update && \
     llvm-11 llvm-11-dev \
     python3 \             
     python3-pip \         
-    python3-dev      
+    python3-dev \
+    python3.10-venv    
 
 # Clean up to reduce image size
 RUN   apt-get autoremove -y && \
