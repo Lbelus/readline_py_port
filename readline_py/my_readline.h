@@ -1,6 +1,11 @@
 #ifndef __HEADERFILE_F_
 #define __HEADERFILE_F_
 
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -18,6 +23,8 @@ bool    is_newline(int size);                       // readline,
 void    tmp_buff_reset();                           // readline,
 
 // C readline helper
-
+#ifdef __cplusplus
+}
+#endif
 
 #endif
