@@ -1,4 +1,4 @@
-#include <my_readline.h>
+#include "my_readline.h"
 
 int READLINE_READ_SIZE = 512;
 char* rl_buff;
@@ -15,19 +15,6 @@ void* my_memset(void* ptr, char ch, int len)
     return ptr_a;
 }
 
-char* my_strcpy(char* str_dest, char* str_src)
-{
-    int len = my_strlen(str_src);
-    int index = 0;
-    while (index < len)
-    {
-        str_dest[index] = str_src[index];
-        index += 1;
-    }
-    str_dest[index] = '\0';
-    return str_dest;
-}
-
 int my_strlen(char* str)
 {
     int len = 0;
@@ -40,6 +27,19 @@ int my_strlen(char* str)
         len += 1;
     }
     return len;
+}
+
+char* my_strcpy(char* str_dest, char* str_src)
+{
+    int len = my_strlen(str_src);
+    int index = 0;
+    while (index < len)
+    {
+        str_dest[index] = str_src[index];
+        index += 1;
+    }
+    str_dest[index] = '\0';
+    return str_dest;
 }
 
 char* my_strcat(char* str_dest, char* str_src)
@@ -66,7 +66,7 @@ char* init_my_readline()
 int my_realloc_rl(int size)
 {
     int size_buff = 0;
-    size_buff = _my_strlen(rl_buff) + 1;
+    size_buff = my_strlen(rl_buff) + 1;
     char tmp_buff[size_buff];
     int total_size = size + size_buff;
     my_strcpy(tmp_buff, rl_buff);
