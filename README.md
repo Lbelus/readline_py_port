@@ -1,6 +1,8 @@
 # readline_py_port
 Port in python of a C implementation of readline
 
+### How to install 
+
 Documentation :
 https://docs.python.org/3/extending/extending.html
 
@@ -16,9 +18,40 @@ python3 -m venv myportenv-env
 source myportenv-env/bin/activate
 ```
 
-
 To build and install project 
 ```bash
 python3 setup.py build
 python3 setup.py install
+```
+
+
+### case usage 
+
+You can read from any FD:
+```python
+import my_readline_module
+
+my_readline_module.init_my_readline()
+fd = open('myfile.txt', 'r')
+
+line = None
+
+while (line := my_readline_module.my_readline(fd.fileno())) is not None:
+    print(line)
+
+fd.close()
+```
+
+Meaning You can read from STDIN and pair my_readline with an strtok equivalent (.split()) if you intent to build a CLI: 
+
+```python
+import my_readline_module
+
+my_readline_module.init_my_readline()
+
+while (line := my_readline_module.my_readline(0)) is not None:
+    tokens = line.split()
+    print(tokens)
+
+fd.close()
 ```
