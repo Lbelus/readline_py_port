@@ -10,6 +10,13 @@ docker build -t img_py_port .
 docker run -it -v /pathToDir/:/workspace/ --name cont_py_port img_py_port /bin/bash
 ```
 
+Create a virtual env
+```bash
+python3 -m venv myportenv-env
+source myportenv-env/bin/activate
+```
+
+
 To build and install project 
 ```bash
 python3 setup.py build
