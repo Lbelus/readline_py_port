@@ -27,7 +27,7 @@ python3 setup.py install
 
 ### case usage 
 
-You can read from any FD:
+You can read from any FD meaning a socket as well:
 ```python
 import my_readline_module
 
@@ -53,3 +53,5 @@ while (line := my_readline_module.my_readline(0)) is not None:
     tokens = line.split()
     print(tokens)
 ```
+### The Core Team
+* [Lorris BELUS](//github.com/Lbelus) - Developer

@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND=non-interactive
 RUN apt-get update && \
     apt-get install -y \
     build-essential \
-    llvm \
+    llvm\
     clang \
     cmake \
     git \
@@ -16,11 +16,10 @@ RUN apt-get update && \
     unzip \
     pkg-config \
     nasm \
-    llvm-11 llvm-11-dev \
     python3 \             
     python3-pip \         
-    python3-dev \
-    python3.10-venv    
+    python3-dev \     
+    python3-venv
 
 # Clean up to reduce image size
 RUN   apt-get autoremove -y && \
