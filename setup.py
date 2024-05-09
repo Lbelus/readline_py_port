@@ -5,7 +5,7 @@ sources_files = glob.glob('./readline_py/*.c')
 
 module = Extension('my_readline_module',
                     sources = sources_files,
-                    include_dirs = ['./readline_py/my_readline.h'],  
+                    include_dirs = ['./readline_py/'],  
                     libraries = [], 
                     library_dirs = [])
 
